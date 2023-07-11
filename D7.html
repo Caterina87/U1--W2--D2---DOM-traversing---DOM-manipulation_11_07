@@ -96,15 +96,17 @@
         const mainTitle = document.querySelector("h1");
         mainTitle.classList.add("mYHeading");
       };
+      console.log("Esercizio 2", addClassToTitle());
 
       /* ESERCIZIO 3
          Scrivi una funzione per che cambi il testo dei p figli di un div
         */
 
       const changePcontent = function () {
-        const pContent = document.getElementsByTagName("div p");
-        pContent.innerText =
-          "Il DOM Traversing & Manipulation è la possibilità di utilizzare JavaScript per selezionare e manipolare strutture del DOM";
+        const divParagraph = document.querySelectorAll("div p");
+        for (let index = 0; index < divParagraph.length; index++) {
+          divParagraph[index].innerText = "Lorem ipsum sit amet lorem ipsum sit amet lorem ipsum sit amet";
+        }
       };
 
       console.log("Esercizio 3", changePcontent());
@@ -113,7 +115,13 @@
          Scrivi una funzione che cambi la proprietà href di ogni link (tranne quello nel footer) con il valore https://www.google.com
         */
 
-      const changeUrls = function () {};
+      const changeUrls = function () {
+        const urlsMain = document.querySelectorAll("body a");
+        for (let index = 0; index < urlsMain.length; index++) {
+          urlsMain[index].innerText = "https://www.google.com";
+        }
+        console.log("Esercizio 4", changeUrls());
+      };
 
       /* ESERCIZIO 5
          Scrivi una funzione che aggiunga un nuovo elemento lista alla seconda lista non ordinata
